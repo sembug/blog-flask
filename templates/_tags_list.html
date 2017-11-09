@@ -1,0 +1,12 @@
+<div class="widget widget_tags">
+   <h3>Post Tags.</h3>
+
+   <div class="tagcloud group">
+      {% for item in tags %}
+          <a href="#">{{item.name}}</a>
+      {% else %}
+          <a>No tags here so far</a>
+      {% endfor %}
+   </div>
+
+</div>

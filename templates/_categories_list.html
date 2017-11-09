@@ -1,0 +1,10 @@
+<div class="widget widget_categories group">
+    <h3>Categories.</h3>
+    <ul>
+        {% for item in categories %}
+            <li><a href="#" title="">{{item.name}}</a> ({{item.posts|length }})</li>
+        {% else %}
+            <li><a>No categories here so far</a></li>
+        {% endfor %}
+    </ul>
+</div>

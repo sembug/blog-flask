@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block body %}
+
+   	<div class="row">
+
+   		<div id="main" class="eight columns">
+            {% for item in items %}
+	   		<article class="entry">
+
+					<header class="entry-header">
+
+						<h2 class="entry-title">
+							<a href="/post/{{ item.id }}" title="{{ item.title }}">{{ item.title }}</a>
+						</h2>
+
+						<div class="entry-meta">
+							<ul>
+								<li>{{ item.pub_date|datetimeformat }}</li>
+								<span class="meta-sep">&bull;</span>
+								<li><a href="#" title="" rel="category tag">{{ item.category }}</a></li>
+								<span class="meta-sep">&bull;</span>
+								<li>{{ item.author }}</li>
+							</ul>
+						</div>
+
+					</header>
+
+					<div class="entry-content">
+						{{ item.body|truncate }}
+                        <a href="/post/{{ item.id }}">More</a>
+					</div>
+
+				</article> <!-- end entry -->
+
+        {% else %}
+            <article><em>No entries here so far</em></article>
+        {% endfor %}
+
+
+   		</div> <!-- end main -->
+
+
+   		{% include '_sidebar.html' %}
+
+   	</div> <!-- end row -->
+
+{% endblock %}
